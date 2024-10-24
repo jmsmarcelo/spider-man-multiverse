@@ -6,12 +6,13 @@ const carousel = document.querySelector('.carousel'),
 let selectedIndex = 0;
 function carouselMouseEnter(i) {
     document.documentElement.style.setProperty('--body-over-backgroud', overBg[i]);
+    console.log
     const oldItemActive = document.querySelector('.item-active');
     if(oldItemActive) {
         oldItemActive.classList.remove('item-active');
     }
     carousel.children[i].classList.add('item-active');
-    document.body.classList.add(`sm${i}`);
+    document.body.classList.add('sm');
     const notThis = document.querySelectorAll('.carousel-item:not(.item-active)');
     notThis.forEach(elem => {
         elem.classList.add('item-not-active');
@@ -19,7 +20,7 @@ function carouselMouseEnter(i) {
 }
 function carouselMouseLeave(i) {
     carousel.children[i].classList.remove('item-active');
-    document.body.classList.remove(`sm${i}`);
+    document.body.classList.remove('sm');
     const notThis = document.querySelectorAll('.item-not-active');
     notThis.forEach(elem => {
         elem.classList.remove('item-not-active');

@@ -20,13 +20,7 @@ body::after {
 body > * {
     z-index: 1;
 }
-body.sm0::after {
-    opacity: 1;
-}
-body.sm1::after {
-    opacity: 1;
-}
-body.sm2::after {
+body.sm::after {
     opacity: 1;
 }
 header nav {
@@ -84,11 +78,11 @@ main {
 }
 .carousel-item:nth-child(2) {
     transform: rotateY(120deg) translateZ(30vw);
-    background: url('../images/th--bg.png') center/cover no-repeat;
+    background: url('../images/ag--bg.jpg') center/cover no-repeat;
 }
 .carousel-item:nth-child(3) {
     transform: rotateY(240deg) translateZ(30vw);
-    background: url('../images/ag--bg.jpg') center/cover no-repeat;
+    background: url('../images/th--bg.png') center/cover no-repeat;
 }
 .carousel-item.eventAll {
     pointer-events: all;
