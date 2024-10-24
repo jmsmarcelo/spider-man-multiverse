@@ -6,7 +6,6 @@ const carousel = document.querySelector('.carousel'),
 let selectedIndex = 0;
 function carouselMouseEnter(i) {
     document.documentElement.style.setProperty('--body-over-backgroud', overBg[i]);
-    console.log
     const oldItemActive = document.querySelector('.item-active');
     if(oldItemActive) {
         oldItemActive.classList.remove('item-active');
@@ -27,10 +26,16 @@ function carouselMouseLeave(i) {
     });
 }
 function changeItem(mode) {
-    if(mode === '<' && selectedIndex > 0) {
-        controlDirect.children[selectedIndex - 1].firstChild.click();
-    } else if(mode === '>' && selectedIndex < 2) {
-        controlDirect.children[selectedIndex + 1].firstChild.click();
+    if(mode === '<') {
+        if(selectedIndex === 0) {
+            selectedIndex = 3;
+        }
+        controlDirect.children[(selectedIndex - 1)].firstChild.click();
+    } else if(mode === '>') {
+        if(selectedIndex === 2) {
+            selectedIndex = -1;
+        }
+        controlDirect.children[(selectedIndex  + 1)].firstChild.click();
     }
 }
 for(let i = 0; i < carousel.children.length; i++) {
@@ -46,10 +51,16 @@ for(let i = 0; i < carousel.children.length; i++) {
     controlDirect.children[i].firstChild.addEventListener('click', function(e) {
         const oldBtnActive = document.querySelector('.btn-active');
         const oldEventAll = document.querySelector('.eventAll');
+        let degVal = Number(carousel.style.transform.replace(/.*rotateY\((-?\d+)deg\).*/, '$1'));
+        if(selectedIndex < i) {
+            degVal += (-120 * (i - selectedIndex));
+        } else if(selectedIndex > i) {
+            degVal -= (-120 * (selectedIndex - i));
+        }
         oldEventAll.classList.remove('eventAll');
         carousel.children[i].classList.add('eventAll');
         oldBtnActive.classList.remove('btn-active');
-        carousel.style.transform = `rotateY(${-120 * i}deg)`;
+        carousel.style.transform = `rotateY(${degVal}deg)`;
         this.classList.add('btn-active');
         selectedIndex = i;
     });

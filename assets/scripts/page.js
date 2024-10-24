@@ -95,7 +95,7 @@ for(let pic of gallery.children) {
 }
 function watchTrailer() {
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/' + data.ytHash;
+    iframe.src = 'https://www.youtube.com/embed/' + data.ytId;
     iframe.width = '560';
     iframe.height = '315';
     iframe.style.border = 'none';
