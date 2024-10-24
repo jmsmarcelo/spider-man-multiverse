@@ -1,0 +1,18 @@
+body {
+    background: url('../images/page-th-sm2_bg.png') center/cover no-repeat;
+}
+header {
+    background: url('../images/page-th-sm2_logo.png') left/contain no-repeat;
+}
+.gallery li:nth-child(1) {
+    background: url('../images/page-th-sm2_pic1.jpg') center/cover no-repeat;
+}
+.gallery li:nth-child(2) {
+    background: url('../images/page-th-sm2_pic2.jpg') center/cover no-repeat;
+}
+.gallery li:nth-child(3) {
+    background: url('../images/page-th-sm2_pic3.jpg') center/cover no-repeat;
+}
+.gallery li:nth-child(4) {
+    background: url('../images/page-th-sm2_pic4.jpg') center/cover no-repeat;
+}
