@@ -1,7 +1,7 @@
 const carousel = document.querySelector('.carousel'),
     controls = document.querySelector('.controls'),
     controlDirect = document.querySelector('.control-direct'),
-    ageUrl = ['page.html?pg=tm-sm1', 'page.html?pg=ag-sm1', 'page.html?pg=th-sm1'],
+    pageUrl = ['page.html?pg=tm-sm1', 'page.html?pg=ag-sm1', 'page.html?pg=th-sm1'],
     overBg = ["url('../images/tm--bg.jpg') center/cover no-repeat", "url('../images/ag--bg.jpg') center/cover no-repeat", "url('../images/th--bg.png') center/cover no-repeat"];
 let selectedIndex = 0;
 function carouselMouseEnter(i) {
