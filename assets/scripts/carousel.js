@@ -1,8 +1,11 @@
 const carousel = document.querySelector('.carousel'),
     controls = document.querySelector('.controls'),
-    controlDirect = document.querySelector('.control-direct');
+    controlDirect = document.querySelector('.control-direct'),
+    ageUrl = ['page.html?pg=tm-sm1', 'page.html?pg=ag-sm1', 'page.html?pg=th-sm1'],
+    overBg = ["url('../images/tm--bg.jpg') center/cover no-repeat", "url('../images/ag--bg.jpg') center/cover no-repeat", "url('../images/th--bg.png') center/cover no-repeat"];
 let selectedIndex = 0;
 function carouselMouseEnter(i) {
+    document.documentElement.style.setProperty('--body-over-backgroud', overBg[i]);
     const oldItemActive = document.querySelector('.item-active');
     if(oldItemActive) {
         oldItemActive.classList.remove('item-active');
@@ -29,7 +32,6 @@ function changeItem(mode) {
         controlDirect.children[selectedIndex + 1].firstChild.click();
     }
 }
-const pageUrl = ['page.html?pg=tm-sm1', 'page.html?pg=ag-sm1', 'page.html?pg=th-sm1']
 for(let i = 0; i < carousel.children.length; i++) {
     carousel.children[i].addEventListener('mouseenter', function(e) {
         carouselMouseEnter(i);

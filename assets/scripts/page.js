@@ -75,18 +75,18 @@ async function setPage() {
 }
 function fullPic(el) {
     popup.bg.removeAttribute('style');
-    const bg = window.getComputedStyle(el).background;
-    popup.cont.style.background = bg;
+    const bg = window.getComputedStyle(el).backgroundImage;
+    popup.cont.style.backgroundImage = bg;
     popup.win.classList.add('popup-pic');
-    popup.bg.classList.remove('popup-close');
     popup.x.onclick = () => {
-        popup.bg.classList.add('popup-close');
+        popup.bg.classList.remove('popup-show');
         setTimeout(() => {
             popup.bg.style.display = 'none';
             popup.win.classList.remove('popup-pic');
             popup.cont.removeAttribute('style');
         }, 300);
     };
+    popup.bg.classList.add('popup-show');
 }
 for(let pic of gallery.children) {
     pic.addEventListener('click', () => {
@@ -105,9 +105,9 @@ function watchTrailer() {
     popup.bg.removeAttribute('style');
     popup.cont.appendChild(iframe);
     popup.win.classList.add('popup-trailer');
-    popup.bg.classList.remove('popup-close');
+    popup.bg.classList.add('popup-show');
     popup.x.onclick = () => {
-        popup.bg.classList.add('popup-close');
+        popup.bg.classList.remove('popup-show');
         setTimeout(() => {
             popup.bg.style.display = 'none';
             popup.win.classList.remove('popup-trailer');

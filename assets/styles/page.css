@@ -125,6 +125,11 @@ button.btn-play::before {
     border: 5px solid var(--primary-color-text);
     border-radius: 7px;
 }
+.popup-win.popup-pic .popup-cont {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .popup-win.popup-trailer {
     width: 560px;
     height: 315px;
